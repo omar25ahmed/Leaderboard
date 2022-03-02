@@ -1,9 +1,4 @@
 export default class Score {
-  constructor(name, score) {
-    this.name = name;
-    this.score = score;
-  }
-
   async postScore(playerName, hisScore) {
     const data = {
       score: hisScore,
