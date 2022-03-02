@@ -1,14 +1,24 @@
-import _ from 'lodash';
 import './style.css';
+import Score from './modules/score.js';
 
-function component() {
-  const element = document.createElement('div');
+const nameInput = document.querySelector('.name');
+const scoreInput = document.querySelector('.score');
+const listScores = document.querySelector('.score-data');
+const refresh = document.querySelector('.refresh');
+const score = new Score(nameInput.value, scoreInput.value);
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'ahmed'], ' ');
-  element.classList.add('hello');
+const form = document.querySelector('.form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  score.postScore(nameInput.value, scoreInput.value);
+  nameInput.value = '';
+  scoreInput.value = '';
+});
 
-  return element;
-}
+refresh.addEventListener('click', () => {
+  window.location.reload();
+});
 
-document.body.appendChild(component());
+window.addEventListener('load', () => {
+  score.getScore(listScores);
+});
