@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard Project</title>
+  <script defer src="main.js"></script></head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpackdede Exercise</title>
-<script defer src="main.js"></script></head>
-
-<body>
+  <body>
     <h1>Leaderboard</h1>
-</body>
-
+    <div class="container">
+      <div class="center">
+        <h1>Add Your Score</h1>
+        <form class="form">
+          <div class="inputbox">
+            <input type="text" required="required" class="name" />
+            <span>Username</span>
+          </div>
+          <div class="inputbox">
+            <input type="text" required="required" class="score" />
+            <span>Score</span>
+          </div>
+          <div class="inputbox">
+            <input type="submit" value="submit" />
+          </div>
+        </form>
+      </div>
+      <div class="score-list">
+        <div class="score-header">
+          <h2>Recent Scores</h2>
+          <div class="inputbox">
+            <input type="button" value="refresh" class="refresh"/>
+          </div>
+        </div>
+        <ul class="score-data"></ul>
+      </div>
+    </div>
+  </body>
 </html>
