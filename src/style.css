@@ -1,52 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap');
+
 body {
   margin: auto;
-  padding: 0;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-
-  /* justify-content: center; */
+  background: linear-gradient(90deg, greenyellow, dodgerblue);
   align-items: center;
 }
 
-form input {
-  display: block;
-  margin: 10px;
+.center {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
   padding: 15px;
-  color: inherit;
-  width: 100%;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: inherit;
-  line-height: var(--inputLineHeight);
-  border: 3px solid black;
-  border-radius: 0.4rem;
 }
 
-.btn {
-  background-color: #fff;
-  border: 3px solid black;
-  box-shadow: 3px 3px;
+.center h1 {
+  font-size: 2em;
+  border-left: 5px solid dodgerblue;
+  padding: 10px;
+  color: #000;
+  letter-spacing: 2px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  padding-left: 10px;
+  font-family: "Sansita Swashed", cursive;
+}
+
+.center .inputbox {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.center .inputbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+.center .inputbox:last-child {
+  margin-bottom: 0;
+}
+
+.center .inputbox span {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  font-size: 1em;
+  transition: 0.6s;
+  font-family: sans-serif;
+}
+
+.center .inputbox input:focus ~ span,
+.center .inputbox input:valid ~ span {
+  transform: translateX(-13px) translateY(-35px);
+  font-size: 1em;
+}
+
+.center .inputbox [type='submit'] {
+  width: 50%;
+  background: dodgerblue;
+  color: #fff;
+  border: #fff;
   cursor: pointer;
-  height: 25px;
 }
 
-.score-list {
-  margin-top: 20px;
+.center .inputbox:hover [type='submit'] {
+  background: linear-gradient(45deg, greenyellow, dodgerblue);
+}
+
+.refresh {
+  background: dodgerblue;
+  color: #fff;
+  border: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.refresh:hover {
+  background: linear-gradient(45deg, greenyellow, dodgerblue);
 }
 
 .score-header {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .score-header h2 {
-  margin: 0;
+  font-size: 2em;
+  border-left: 5px solid dodgerblue;
+  padding: 10px;
+  color: #000;
+  letter-spacing: 5px;
+  font-weight: bold;
+  padding-left: 10px;
+  font-family: "Sansita Swashed", cursive;
 }
 
 .score-data {
   list-style-type: none;
   border: 3px solid black;
-  width: 100%;
   padding: 0;
 }
 
@@ -56,8 +121,63 @@ form input {
 }
 
 li:nth-child(even) {
-  background: lightgrey;
+  background: dodgerblue;
   padding: 10px 0 10px 0;
+}
+
+ol.gradient-list > li,
+ol.gradient-list > li::before {
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ol.gradient-list {
+  counter-reset: gradient-counter;
+  list-style: none;
+  margin: 1.75rem 0;
+  padding-left: 1rem;
+}
+
+ol.gradient-list > li {
+  background: white;
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
+  counter-increment: gradient-counter;
+  margin-top: 1rem;
+  min-height: 3rem;
+  padding: 1rem 1rem 1rem 3rem;
+  position: relative;
+}
+
+ol.gradient-list > li::before,
+ol.gradient-list > li::after {
+  background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
+  border-radius: 1rem 1rem 0 1rem;
+  content: '';
+  height: 3rem;
+  left: -1rem;
+  overflow: hidden;
+  position: absolute;
+  top: -1rem;
+  width: 3rem;
+}
+
+ol.gradient-list > li::before {
+  align-items: flex-end;
+  content: counter(gradient-counter);
+  color: #1d1f20;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.125em 0.25em;
+  z-index: 1;
+}
+
+ol.gradient-list > li + li {
+  margin-top: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -68,11 +188,24 @@ li:nth-child(even) {
     gap: 100px;
   }
 
-  .form {
+  .center {
     order: 1;
+    width: 25%;
+    padding: 50px 50px;
+    height: max-content;
+    margin-top: 50px;
   }
 
-  .score-list {
+  .gradient-list {
     order: 0;
+    width: 100%;
+  }
+
+  .center .inputbox input {
+    width: 60%;
+  }
+
+  .score-header {
+    gap: 50px;
   }
 }

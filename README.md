@@ -1,12 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-# To Do List
+# Leaderboard
 
 Application that record the scores in the leaderboard to have the data from another API you and got many features that you might need.
 
 ## This is an image for it
 
-## Live Demo
-[Live Demo Here](https://omar25ahmed.github.io/ToDo-List/)
+![Screenshot from 2022-03-03 22-13-47](https://user-images.githubusercontent.com/92755394/156645524-6a1a95d3-36a3-42da-9e5d-5d00ad0906f9.png)
+![Screenshot from 2022-03-03 22-14-19](https://user-images.githubusercontent.com/92755394/156645544-2b098b22-c764-45d4-819a-dd0da3a1bf4f.png)
+
+<!-- ## Live Demo
+[Will be ready when the project is finished](https://omar25ahmed.github.io/ToDo-List/) -->
 
 
 
@@ -25,6 +28,11 @@ Application that record the scores in the leaderboard to have the data from anot
 - github
 
 ## Getting Started
+After Cloning
+
+```
+npm install
+npm
 
 **To Create A Portfolio from this Repository feel free to contact me.**
 

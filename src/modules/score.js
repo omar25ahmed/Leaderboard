@@ -1,4 +1,5 @@
 export default class Score {
+  // Posting Method
   async postScore(playerName, hisScore) {
     const data = {
       score: hisScore,
@@ -17,6 +18,7 @@ export default class Score {
     return resData;
   }
 
+  // Getting methods
   async getScore(ul) {
     const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/eGO6BYJoPymcnqAFcKW0/scores/');
     const no = this.score;
